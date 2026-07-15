@@ -2,7 +2,7 @@
 
 ## S2-001 — Login Endpoint
 - **As a** user, **I want** to submit my email and password to receive a session token, **so that** I can access my role-specific features.
-- **Status:** todo
+- **Status:** done
 - **BRD ref:** F1.1, F1.2, NF4
 - **AC:**
   - POST /login accepts JSON payload with `email` (string) and `password` (string) fields
@@ -16,7 +16,7 @@
 
 ## S2-002 — Auth Middleware & Token Blocklist
 - **As a** developer, **I want** protected endpoints to validate incoming JWTs and reject blocklisted tokens, **so that** only authenticated users with valid sessions can access them.
-- **Status:** todo
+- **Status:** done
 - **BRD ref:** NF1, F1.3 (prep)
 - **AC:**
   - GET /health, POST /login, and GET / serve successfully without an Authorization header
@@ -30,7 +30,7 @@
 
 ## S2-003 — Logout Endpoint
 - **As a** user, **I want** to log out and invalidate my current session token, **so that** no one can use my token to access my account.
-- **Status:** todo
+- **Status:** done
 - **BRD ref:** F1.3, NF1
 - **AC:**
   - POST /logout requires a valid Bearer token in the Authorization header (protected endpoint)
@@ -43,7 +43,7 @@
 
 ## S2-004 — Role-Based Home Pages
 - **As a** logged-in user, **I want** to land on a home page tailored to my role, **so that** I see role-specific navigation and information.
-- **Status:** todo
+- **Status:** done
 - **BRD ref:** Theme 2 (land on role-appropriate home)
 - **AC:**
   - GET / when unauthenticated (no Authorization header) serves the landing page (public/index.html) with login form

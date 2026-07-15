@@ -14,7 +14,7 @@ mid-flight and recognize when it's done.
 ## Phase configuration
 
     phases:
-      1: { agent: po, stop_gate: always }
+      1: { agent: po, stop_gate: on_anomaly }
       2: { agent: architect, stop_gate: on_anomaly }
       3: { agent: developer, stop_gate: on_anomaly }
       4: { agent: qa, stop_gate: on_anomaly }
