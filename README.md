@@ -42,26 +42,23 @@ The agents are not free to do whatever they want. `docs/ARCHITECTURE.md` holds t
 
 ## Running the demo app
 
-The Time-Off system that the pipeline produces runs on its own:
-
-```
-npm install
-npm start
-```
-
-It boots on `http://localhost:3000` with a landing page and a `GET /health` endpoint. State lives in memory and resets on restart, which is expected. Requires Node 22.6 or newer (the code runs TypeScript directly via Node's native type stripping, so there is no build step).
+The repository starts empty of application code on purpose: the Time-Off system is what the pipeline produces, not something shipped with it. Run `/sprint 1` and the agents create `package.json`, `src/`, `public/` and `test/` from the backlog. Once the first sprint finishes, the app runs on its own with `npm install && npm start` and boots on `http://localhost:3000`. State lives in memory and resets on restart, which is expected. Requires Node 22.6 or newer, since the hard rules forbid a build step and the code runs TypeScript directly via Node's native type stripping.
 
 ## Repository layout
+
+Only the first three blocks exist in a clean checkout. Everything below the divider is written by the agents as sprints run.
 
 ```
 docs/
   BRD.md                     business requirements
   BACKLOG.md                 themes, one per sprint, with status badges
   ARCHITECTURE.md            hard rules + QA review checklist
-  architecture/decisions/    ADRs
-  sprints/sprint-N/          per-sprint plan, design, QA report, bugs, .phase
 .claude/
   agents/                    po, architect, developer, qa
   skills/sprint/             the /sprint orchestrator
+README.md
+--------------------------------------------------------------------
+docs/architecture/decisions/ ADRs
+docs/sprints/sprint-N/       per-sprint plan, design, QA report, bugs, .phase
 src/, public/, test/         the demo app the pipeline builds
 ```
