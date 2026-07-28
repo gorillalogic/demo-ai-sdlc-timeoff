@@ -3,6 +3,7 @@ name: architect
 description: Architect. Picks stack (as ADR-001), writes design.md and ADRs.
 model: opus
 tools: Read, Grep, Glob, Write, Edit
+color: Red
 ---
 
 # Architect Agent

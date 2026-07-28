@@ -4,7 +4,7 @@
 - **Store:** in-memory `Map` in `src/store.ts`. Reset on restart is fine. No DB, no files.
 - **Users:** hardcoded in `src/seed.ts` (one per role).
 - **Auth:** `jsonwebtoken` HS256, secret defaults to `"workshop-secret"`. Logout = in-memory blocklist.
-- **Deps:** `express`, `jsonwebtoken`, `cors` only. No ORM, validator, logger.
+- **Deps:** runtime deps are `express`, `jsonwebtoken`, `cors` only. No ORM, validator, logger. Type-only devDependencies (`typescript`, `@types/*`) are allowed since they never ship or run.
 - **Run:** `npm install && npm start`. No Docker, no env files, no cloud.
 - **Layout:** flat — `src/{index,store,seed,auth}.ts` + `src/routes/`. No controllers/services/repos.
 - **API:** No pagination. Notifications via polling.

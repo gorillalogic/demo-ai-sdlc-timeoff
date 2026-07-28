@@ -44,6 +44,26 @@ The agents are not free to do whatever they want. `docs/ARCHITECTURE.md` holds t
 
 The repository starts empty of application code on purpose: the Time-Off system is what the pipeline produces, not something shipped with it. Run `/sprint 1` and the agents create `package.json`, `src/`, `public/` and `test/` from the backlog. Once the first sprint finishes, the app runs on its own with `npm install && npm start` and boots on `http://localhost:3000`. State lives in memory and resets on restart, which is expected. Requires Node 22.6 or newer, since the hard rules forbid a build step and the code runs TypeScript directly via Node's native type stripping.
 
+## Running the Time-Off app locally
+
+Requires Node 22.6 or newer (the app runs TypeScript directly via Node's native type stripping,
+no build step).
+
+```
+npm install
+npm start
+```
+
+The server listens on `http://localhost:3000`. Three hardcoded users are seeded into an
+in-memory store on every startup; there is no persistence, so any state changes are lost when
+the process restarts.
+
+| Role | Email | Password |
+|---|---|---|
+| Employee | `employee@timeoff.local` | `employee123` |
+| Manager | `manager@timeoff.local` | `manager123` |
+| HR | `hr@timeoff.local` | `hr123` |
+
 ## Repository layout
 
 Only the first three blocks exist in a clean checkout. Everything below the divider is written by the agents as sprints run.
